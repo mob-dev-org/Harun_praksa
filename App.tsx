@@ -15,11 +15,11 @@ export default function App() {
     } else {
         return (
             <View style={[{ alignItems: 'center', justifyContent: 'center', height: '50%' }]}>
-                <Text>TEST VARIJABLE</Text>
-                <Text>TEST VARIJABLE</Text>
-                <Text>TEST VARIJABLE</Text>
-                <Text>TEST VARIJABLE</Text>
-                <Text>TEST VARIJABLE</Text>
+                <Text>let message; message = 'hello'</Text>
+                <Text>let message= 'hello' //implicit </Text>
+                <Text>let message:string = 'hello' //explicit</Text>
+                <Text>let message:number = 'hello' // error </Text>
+                <Text>TEST VARIJaABLE</Text>
             </View>
         );
     }
