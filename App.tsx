@@ -7,6 +7,8 @@ import useColorScheme from './src/hooks/useColorScheme';
 import Navigation from './src/navigation';
 
 export default function App() {
+    // let message: string;
+    let message = 'hello';
     const isLoadingComplete = useCachedResources();
     const colorScheme = useColorScheme();
 
@@ -18,8 +20,9 @@ export default function App() {
                 <Text>let message; message = 'hello'</Text>
                 <Text>let message= 'hello' //implicit </Text>
                 <Text>let message:string = 'hello' //explicit</Text>
-                <Text>let message:number = 'hello' // error </Text>
-                <Text>TEST VARIJaABLE</Text>
+                <Text>let tacnost: boolean = false;</Text>
+                <Text>{message}</Text>
+                <StatusBar style="dark" />
             </View>
         );
     }
