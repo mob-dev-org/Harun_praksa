@@ -9,9 +9,10 @@ import Navigation from './src/navigation';
 export default function App() {
     const isLoadingComplete = useCachedResources();
     const colorScheme = useColorScheme();
-    const ime: { [key: string]: number } = {};
-    ime.Jack = 23;
-    // ime.Bajro = 23; must be string
+    type nameType = { [key: string]: number };
+    const name: nameType = {};
+    name.Jack = 24;
+    // name.Bajro = 23; must be string
     const car: { name: string; km: number; color?: string } = {
         name: 'audi',
         km: 115000,
@@ -27,7 +28,7 @@ export default function App() {
                 <Text>{car.name}</Text>
                 <Text>{car.km}</Text>
                 <Text>{car.color}</Text>
-                <Text>{ime.Jack}</Text>
+                <Text> {name.Jack}</Text>
                 <Text>TEST Dev</Text>
             </View>
         );
