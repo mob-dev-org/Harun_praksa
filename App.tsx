@@ -9,13 +9,15 @@ import Navigation from './src/navigation';
 export default function App() {
     const isLoadingComplete = useCachedResources();
     const colorScheme = useColorScheme();
+    let str = 'hello';
 
     if (!isLoadingComplete) {
         return null;
     } else {
         return (
             <View style={[{ alignItems: 'center', justifyContent: 'center', height: '50%' }]}>
-                <Text>TEST Dev</Text>
+                <Text>{str.toUpperCase()}</Text>
+                <Text>{str.length}</Text>
                 <Text>TEST Dev</Text>
                 <Text>TEST Dev</Text>
                 <Text>TEST Dev</Text>
