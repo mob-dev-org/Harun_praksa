@@ -9,11 +9,16 @@ import Navigation from './src/navigation';
 export default function App() {
     const isLoadingComplete = useCachedResources();
     const colorScheme = useColorScheme();
-    type nameType = { [key: string]: number };
-    const name: nameType = {};
-    name.Jack = 24;
-    // name.Bajro = 23; must be string
-    const car: { name: string; km: number; color?: string } = {
+    // type nameType = { [key: string]: number }; // for dynamic inputs
+    type yearsType = { numberOfYears: number; myYears?: number };
+    const years: yearsType = {
+        numberOfYears: 3,
+    };
+    years.numberOfYears = 24;
+    years.myYears = 12;
+
+    type carType = { name: string; km: number; color?: string };
+    const car: carType = {
         name: 'audi',
         km: 115000,
     };
@@ -28,8 +33,8 @@ export default function App() {
                 <Text>{car.name}</Text>
                 <Text>{car.km}</Text>
                 <Text>{car.color}</Text>
-                <Text> {name.Jack}</Text>
-                <Text>TEST Dev</Text>
+                <Text> {years.myYears}</Text>
+                <Text>{years.numberOfYears}</Text>
             </View>
         );
     }
