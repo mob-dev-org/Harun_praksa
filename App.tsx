@@ -10,15 +10,13 @@ export default function App() {
     const isLoadingComplete = useCachedResources();
     const colorScheme = useColorScheme();
     // type nameType = { [key: string]: number }; // for dynamic inputs
-    type yearsType = { numberOfYears: number; myYears?: number };
-    const years: yearsType = {
-        numberOfYears: 3,
-    };
+    type Years = { numberOfYears?: number; myYears?: number };
+    const years: Years = {};
     years.numberOfYears = 24;
     years.myYears = 12;
 
-    type carType = { name: string; km: number; color?: string };
-    const car: carType = {
+    type Car = { name: string; km: number; color?: string };
+    const car: Car = {
         name: 'audi',
         km: 115000,
     };
