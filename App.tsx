@@ -27,19 +27,30 @@ export default function App() {
     nameOfFunction();
 
     const functionName = () => {
-        let age = 26;
+        let age: number = 26;
         let birthday = 1 + age;
         console.log(birthday);
     };
     // console.log(age); // can't find variable age because it's in the function scope
     functionName();
 
+    //example with parametars
+    const newExample = (a: string, b: string) => {
+        console.log(a + ' ' + b);
+    };
+    newExample('Harun', 'Husejnovic');
+
+    const sum = (c: number, d: number) => {
+        return c + d;
+    };
+    console.log(sum(4, 2));
+
     if (!isLoadingComplete) {
         return null;
     } else {
         return (
             <View style={styles.text}>
-                <Text>Function test</Text>
+                <Text>Function</Text>
                 <Text>Function test</Text>
                 <Text>Function test</Text>
                 <Text>Function test</Text>
