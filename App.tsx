@@ -8,15 +8,7 @@ import useColorScheme from './src/hooks/useColorScheme';
 import Navigation from './src/navigation';
 
 export default function App() {
-    const isLoadingComplete = useCachedResources();
-    const colorScheme = useColorScheme();
-    // let name: string = 'Harun';
-    // function greetingFunction() {
-    //     let message: string = 'Hello ' + name;
-    //     alert(message);
-    // }
-    // alert(name);
-    // greetingFunction();
+    const [result, setResult] = useState(0);
 
     let name: string = 'Harun';
     const greetingFunction = () => {
@@ -43,21 +35,16 @@ export default function App() {
     const sum = (numberA: number, numberB: number) => {
         return numberA + numberB;
     };
-    console.log(sum(4, 2));
 
-    if (!isLoadingComplete) {
-        return null;
-    } else {
-        return (
-            <View style={styles.text}>
-                <Text>Function</Text>
-                <Text>Function test</Text>
-                <Text>Function test</Text>
-                <Text>Function test</Text>
-                <Text>Function test</Text>
-            </View>
-        );
-    }
+    return (
+        <View style={styles.text}>
+            <Text onPress={() => setResult(sum(5, 3))}>{result}</Text>
+            <Text>Function test</Text>
+            <Text>Function test</Text>
+            <Text>Function test</Text>
+            <Text>Function test</Text>
+        </View>
+    );
 }
 
 const styles = StyleSheet.create({
