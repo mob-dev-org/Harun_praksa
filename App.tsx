@@ -11,37 +11,37 @@ export default function App() {
     const isLoadingComplete = useCachedResources();
     const colorScheme = useColorScheme();
     // let name: string = 'Harun';
-    // function nameOfFunction() {
+    // function greetingFunction() {
     //     let message: string = 'Hello ' + name;
     //     alert(message);
     // }
     // alert(name);
-    // nameOfFunction();
+    // greetingFunction();
 
     let name: string = 'Harun';
-    const nameOfFunction = () => {
+    const greetingFunction = () => {
         let message: string = 'Hello ' + name;
         console.log(message);
     };
 
-    nameOfFunction();
+    greetingFunction();
 
-    const functionName = () => {
+    const birthdayFunction = () => {
         let age: number = 26;
-        let birthday = 1 + age;
+        let birthday = +age;
         console.log(birthday);
     };
     // console.log(age); // can't find variable age because it's in the function scope
-    functionName();
+    birthdayFunction();
 
     //example with parametars
-    const newExample = (a: string, b: string) => {
-        console.log(a + ' ' + b);
+    const fullName = (ime: string, prezime: string) => {
+        console.log(ime + ' ' + prezime);
     };
-    newExample('Harun', 'Husejnovic');
+    fullName('Harun', 'Husejnovic');
 
-    const sum = (c: number, d: number) => {
-        return c + d;
+    const sum = (numberA: number, numberB: number) => {
+        return numberA + numberB;
     };
     console.log(sum(4, 2));
 
