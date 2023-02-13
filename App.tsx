@@ -38,7 +38,7 @@ export default function App() {
 
     return (
         <View style={styles.text}>
-            <Text onPress={() => setResult(sum(5, 3))}>{result}</Text>
+            <Text onPress={() => setResult(sum(7, 3))}>{result}</Text>
             <Text>Function test</Text>
             <Text>Function test</Text>
             <Text>Function test</Text>
