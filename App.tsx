@@ -33,11 +33,9 @@ export default function App() {
     };
     fullName('Harun', 'Husejnovic');
     let numberA: number = 3;
-    let numberB: number = 2;
+    let numberB: number = 1;
 
-    const sum = (): number => {
-        return numberA + numberB;
-    };
+    const sum = (): number => numberA + numberB;
 
     let numA: number = 6;
     let numB: number = 3;
@@ -53,7 +51,7 @@ export default function App() {
             {/* <Button title="Result" onPress={sum} /> */}
             <Button title="Calculate" onPress={calculate} />
             <Text>{calculateResult}</Text>
-            <Text>Function test</Text>
+            <Text>{sum()}</Text>
             <Text>Function test</Text>
         </View>
     );
