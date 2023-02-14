@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { Text, TextInput, View, StyleSheet, Button, Alert } from 'react-native';
+import { TextProps, Text, TextInput, View, StyleSheet, Button, Alert } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import useCachedResources from './src/hooks/useCachedResources';
@@ -8,12 +8,13 @@ import useColorScheme from './src/hooks/useColorScheme';
 import Navigation from './src/navigation';
 
 export default function App() {
-    const [result, setResult] = useState(0);
+    const [result, setResult] = useState<number>(0);
+    // const [calculate, setCalculate] = useState<number>(0);
 
     let name: string = 'Harun';
-    const greetingFunction = () => {
+    const greetingFunction = (): string => {
         let message: string = 'Hello ' + name;
-        console.log(message);
+        return message;
     };
 
     greetingFunction();
@@ -27,20 +28,31 @@ export default function App() {
     birthdayFunction();
 
     //example with parametars
-    const fullName = (ime: string, prezime: string) => {
-        console.log(ime + ' ' + prezime);
+    const fullName = (name: string, suraName: string) => {
+        console.log(name + ' ' + suraName);
     };
     fullName('Harun', 'Husejnovic');
+    let numberA: number = 3;
+    let numberB: number = 2;
 
-    const sum = (numberA: number, numberB: number) => {
+    const sum = (): number => {
         return numberA + numberB;
     };
 
+    let numA: number = 6;
+    let numB: number = 3;
+    const calculate = (): number => {
+        return numA * numB;
+    };
+
+    const calculateResult: number = calculate();
+
     return (
         <View style={styles.text}>
-            <Text onPress={() => setResult(sum(7, 3))}>{result}</Text>
-            <Text>Function test</Text>
-            <Text>Function test</Text>
+            <Text>{greetingFunction()}</Text>
+            {/* <Button title="Result" onPress={sum} /> */}
+            <Button title="Calculate" onPress={calculate} />
+            <Text>{calculateResult}</Text>
             <Text>Function test</Text>
             <Text>Function test</Text>
         </View>
