@@ -39,11 +39,20 @@ export default function App() {
 
     let numA: number = 6;
     let numB: number = 3;
-    const calculate = (): number => {
-        return numA * numB;
-    };
+    const calculate = (): number => numA * numB;
 
     const calculateResult: number = calculate();
+    // Example with obj in function
+    const introduce = (name: string, age: number) => {
+        const person: { name: string; age: number } = {
+            name: name,
+            age: age,
+        };
+        const intro = `Hello, I'm ${person.name} and I'm ${person.age} years old`;
+        return intro;
+    };
+
+    introduce('Harun', 27);
 
     return (
         <View style={styles.text}>
@@ -52,7 +61,7 @@ export default function App() {
             <Button title="Calculate" onPress={calculate} />
             <Text>{calculateResult}</Text>
             <Text>{sum()}</Text>
-            <Text>Function test</Text>
+            <Text>{introduce('Harun', 27)}</Text>
         </View>
     );
 }
