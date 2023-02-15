@@ -14,21 +14,32 @@ export default function App() {
     const names: string[] = ['Harun', ' ', 'Bajram', ' ', 'Mahir', ' ', 'Malik', ' ', 'Almin'];
     let lenght;
     names.pop(); // remove last element
-    const isLoadingComplete = useCachedResources();
-    const colorScheme = useColorScheme();
 
-    if (!isLoadingComplete) {
-        return null;
-    } else {
-        return (
-            <View style={[{ alignItems: 'center', justifyContent: 'center', height: '50%' }]}>
-                <Text>{numbers}</Text>
-                <Text>{names}</Text>
-                <Text>{numbers[2]}</Text>
-                <Text>{names.length}</Text>
+    // adding some map method, and comma
+    const doubleNums = numbers.map((number) => number * 2);
+    const commaSeparator = doubleNums.join(',');
+    doubleNums;
 
-                <StatusBar animated backgroundColor="#00f" style="dark" />
-            </View>
-        );
-    }
+    const currencyEUR: number[] = [1, 5, 10, 20, 50, 100];
+    const toBAM = (value: number) => {
+        value *= 1.95;
+        return value;
+    };
+
+    let currencyBAM = currencyEUR.map(toBAM);
+    const commaSeparator2 = currencyBAM.join(' , ');
+
+    return (
+        <View style={[{ alignItems: 'center', justifyContent: 'center', height: '50%' }]}>
+            <Text>{numbers}</Text>
+            <Text>{names}</Text>
+            <Text>{numbers[2]}</Text>
+            <Text>{names.length}</Text>
+            <Text>{commaSeparator}</Text>
+            <Text>{}</Text>
+            <Text>{commaSeparator2}</Text>
+
+            <StatusBar animated backgroundColor="#c40f" style="dark" />
+        </View>
+    );
 }
