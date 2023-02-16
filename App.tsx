@@ -7,20 +7,18 @@ import useColorScheme from './src/hooks/useColorScheme';
 import Navigation from './src/navigation';
 
 export default function App() {
-    const isLoadingComplete = useCachedResources();
-    const colorScheme = useColorScheme();
+    let str = 'hello';
+    let num: number = 23.123;
 
-    if (!isLoadingComplete) {
-        return null;
-    } else {
-        return (
-            <View style={[{ alignItems: 'center', justifyContent: 'center', height: '50%' }]}>
-                <Text>TEST Dev</Text>
-                <Text>TEST Dev</Text>
-                <Text>TEST Dev</Text>
-                <Text>TEST Dev</Text>
-                <Text>TEST Dev</Text>
-            </View>
-        );
-    }
+    return (
+        <View style={[{ alignItems: 'center', justifyContent: 'center', height: '50%' }]}>
+            <Text>{str.toUpperCase()}</Text>
+            <Text>{str.length}</Text>
+            <Text>{num.toFixed(1)} </Text>
+            <Text>{Math.random().toFixed(3)} </Text>
+            <Text>Test </Text>
+            <Text>TEST Dev</Text>
+            <Text>TEST Dev</Text>
+        </View>
+    );
 }
