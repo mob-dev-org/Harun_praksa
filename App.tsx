@@ -42,17 +42,31 @@ export default function App() {
     const calculate = (): number => numA * numB;
 
     const calculateResult: number = calculate();
-    // Example with obj in function
-    const introduce = (name: string, age: number) => {
-        const person: { name: string; age: number } = {
-            name: name,
-            age: age,
-        };
+
+    type Person = { name: string; age: number };
+
+    const person: Person = {
+        name: 'Harun',
+        age: 26,
+    };
+    const introduce = (person: Person): string => {
         const intro = `Hello, I'm ${person.name} and I'm ${person.age} years old`;
         return intro;
     };
 
-    introduce('Harun', 27);
+    introduce(person);
+
+    const numArr: number[] = [2, 4, 6, 8, 10, 20];
+
+    const sumArr = (numArr: number[]): number => {
+        let sum1 = 0;
+        for (const num of numArr) {
+            sum1 += num;
+        }
+        return sum1;
+    };
+
+    const resultArr = sumArr(numArr);
 
     return (
         <View style={styles.text}>
@@ -61,7 +75,8 @@ export default function App() {
             <Button title="Calculate" onPress={calculate} />
             <Text>{calculateResult}</Text>
             <Text>{sum()}</Text>
-            <Text>{introduce('Harun', 27)}</Text>
+            <Text>{introduce(person)}</Text>
+            <Text>{resultArr}</Text>
         </View>
     );
 }
