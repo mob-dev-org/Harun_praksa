@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import { Text, View } from 'react-native';
+import { useState } from 'react';
+import { TextProps, Text, TextInput, View, StyleSheet, Button, Alert } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import useCachedResources from './src/hooks/useCachedResources';
@@ -7,20 +8,83 @@ import useColorScheme from './src/hooks/useColorScheme';
 import Navigation from './src/navigation';
 
 export default function App() {
-    const isLoadingComplete = useCachedResources();
-    const colorScheme = useColorScheme();
+    const [result, setResult] = useState<number>(0);
+    // const [calculate, setCalculate] = useState<number>(0);
 
-    if (!isLoadingComplete) {
-        return null;
-    } else {
-        return (
-            <View style={[{ alignItems: 'center', justifyContent: 'center', height: '50%' }]}>
-                <Text>TEST VARIJABLE</Text>
-                <Text>TEST VARIJABLE</Text>
-                <Text>TEST VARIJABLE</Text>
-                <Text>TEST VARIJABLE</Text>
-                <Text>TEST VARIJABLE</Text>
-            </View>
-        );
-    }
+    let name: string = 'Harun';
+    const greetingFunction = (): string => {
+        let message: string = 'Hello ' + name;
+        return message;
+    };
+
+    greetingFunction();
+
+    const birthdayFunction = () => {
+        let age: number = 26;
+        let birthday = +age;
+        console.log(birthday);
+    };
+    // console.log(age); // can't find variable age because it's in the function scope
+    birthdayFunction();
+
+    //example with parametars
+    const fullName = (name: string, suraName: string) => {
+        console.log(name + ' ' + suraName);
+    };
+    fullName('Harun', 'Husejnovic');
+    let numberA: number = 3;
+    let numberB: number = 1;
+
+    const sum = (): number => numberA + numberB;
+
+    let numA: number = 6;
+    let numB: number = 3;
+    const calculate = (): number => numA * numB;
+
+    const calculateResult: number = calculate();
+
+    type Person = { name: string; age: number };
+
+    const person: Person = {
+        name: 'Harun',
+        age: 26,
+    };
+    const introduce = (person: Person): string => {
+        const intro = `Hello, I'm ${person.name} and I'm ${person.age} years old`;
+        return intro;
+    };
+
+    introduce(person);
+
+    const numArr: number[] = [2, 4, 6, 8, 10, 20];
+
+    const sumArr = (numArr: number[]): number => {
+        let sum1 = 0;
+        for (const num of numArr) {
+            sum1 += num;
+        }
+        return sum1;
+    };
+
+    const resultArr = sumArr(numArr);
+
+    return (
+        <View style={styles.text}>
+            <Text>{greetingFunction()}</Text>
+            {/* <Button title="Result" onPress={sum} /> */}
+            <Button title="Calculate" onPress={calculate} />
+            <Text>{calculateResult}</Text>
+            <Text>{sum()}</Text>
+            <Text>{introduce(person)}</Text>
+            <Text>{resultArr}</Text>
+        </View>
+    );
 }
+
+const styles = StyleSheet.create({
+    text: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '50%',
+    },
+});
