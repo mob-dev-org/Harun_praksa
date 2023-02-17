@@ -16,7 +16,7 @@ export default function App() {
     names.pop(); // remove last element
 
     // adding some map method, and comma
-    const doubleNums = numbers.map((number) => number * 2);
+    const doubleNums: number[] = numbers.map((number) => number * 2);
     const commaSeparator = doubleNums.join(' ,');
     doubleNums;
 
@@ -29,7 +29,7 @@ export default function App() {
 
     const toKM = currencyEUR.map((value) => value * 1.95);
 
-    const commaSeparator2 = toKM.join(' KM, ');
+    const commaSeparator2: string = toKM.join(' KM, ');
 
     return (
         <View style={[{ alignItems: 'center', justifyContent: 'center', height: '50%' }]}>
