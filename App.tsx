@@ -32,6 +32,19 @@ export default function App() {
     const toKM = currencyEUR.map((value) => value * 1.95);
 
     const commaSeparator2: string = toKM.join(' KM, ');
+    // type nameType = { [key: string]: number }; // for dynamic inputs
+    type Years = { numberOfYears?: number; myYears?: number };
+    const years: Years = {};
+    years.numberOfYears = 24;
+    years.myYears = 12;
+
+    type Car = { name: string; km: number; color?: string };
+    const car: Car = {
+        name: 'audi',
+        km: 115000,
+    };
+    car.km = 112000;
+    car.color = 'blue';
 
     return (
         <View style={[{ alignItems: 'center', justifyContent: 'center', height: '50%' }]}>
