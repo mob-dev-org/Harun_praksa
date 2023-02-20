@@ -61,6 +61,7 @@
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
+  
   },
   "commit-and-tag-version": {
     "skip": {
@@ -71,6 +72,11 @@
         "type": "feat",
         "section": "Features:"
       },
+
+      {
+        "type": "module"
+      },
+
       {
         "type": "fix",
         "section": "Bug Fixes"

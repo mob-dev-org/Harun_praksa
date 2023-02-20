@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import { Text, View } from 'react-native';
+import { useState } from 'react';
+import { TextProps, Text, TextInput, View, StyleSheet, Button, Alert } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import useCachedResources from './src/hooks/useCachedResources';
@@ -60,6 +61,11 @@ export default function App() {
             <Text>{commaSeparator}</Text>
             {/* <Text>{currencyBAM}</Text> */}
             <Text>{commaSeparator2}</Text>
+            <Text>{car.name}</Text>
+            <Text>{car.km}</Text>
+            <Text>{car.color}</Text>
+            <Text> {years.myYears}</Text>
+            <Text>{years.numberOfYears}</Text>
             <StatusBar style="dark" />
         </View>
     );
