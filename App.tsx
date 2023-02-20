@@ -40,6 +40,13 @@ export default function App() {
             <Text>let message:string = 'hello' //explicit</Text>
             <Text>let tacnost: boolean = false;</Text>
             <Text>{message}</Text>
+            <Text>{numbers}</Text>
+            <Text>{names}</Text>
+            <Text>{numbers[2]}</Text>
+            <Text>{names.length}</Text>
+            <Text>{commaSeparator}</Text>
+            {/* <Text>{currencyBAM}</Text> */}
+            <Text>{commaSeparator2}</Text>
             <StatusBar style="dark" />
         </View>
     );
