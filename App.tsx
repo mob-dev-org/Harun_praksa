@@ -48,7 +48,7 @@ export default function App() {
     car.color = 'blue';
 
     return (
-        <View style={[{ alignItems: 'center', justifyContent: 'center', height: '50%' }]}>
+        <View style={styles.text}>
             <Text>let message; message = 'hello'</Text>
             <Text>let message= 'hello' //implicit </Text>
             <Text>let message:string = 'hello' //explicit</Text>
@@ -70,3 +70,11 @@ export default function App() {
         </View>
     );
 }
+
+const styles = StyleSheet.create({
+    text: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '50%',
+    },
+});
