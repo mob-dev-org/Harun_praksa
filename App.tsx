@@ -55,6 +55,28 @@ export default function App() {
 
     let user = makeUser('John', 30);
 
+    let obj2 = {
+        for: 1,
+        let: 2,
+        return: 3,
+    };
+
+    const sumObj2 = obj2.for + obj2.let + testObj1.myName + obj2.return;
+
+    const introduce = (name: string, age: number) => {
+        const person = {
+            name: name,
+            age: age,
+            income: 1000,
+            outcome: 700,
+            netWorth: () => person.income - person.outcome,
+        };
+        const intro = `Hi my name is ${person.name} and I'm wearing ${
+            person.age
+        } old. My networth is  ${person.netWorth()} KM `;
+        return intro;
+    };
+
     return (
         <View style={[{ alignItems: 'center', justifyContent: 'center', height: '50%' }]}>
             <Text>{car.name}</Text>
@@ -68,7 +90,9 @@ export default function App() {
             <Text>{testObj1['age']}</Text>
             <Text>{user['age']}</Text>
             <Text>{user['age']}</Text>
-            <Text></Text>
+            <Text>{sumObj2}</Text>
+            <Text>{introduce('Harun', 26)}</Text>
+            <Text>{}</Text>
         </View>
     );
 }
